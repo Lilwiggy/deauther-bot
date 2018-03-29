@@ -15,6 +15,7 @@ let lastPacket = new Date();
 // Makes the data readable by a human
 port.pipe(parser);
 
+
 port.on('open', () => {
   console.log(`Connected to ESP8266!`);
 });
@@ -23,8 +24,19 @@ client.on('message', (message) => {
   if (message.author.bot)
     return;
 
+  let args = message.content.split(' ');
+
   // Getting the channel object for later use
   channel = message.channel;
+
+  if (data.prefix === 'mention') {
+    if (message.mentions.members.first() && message.mentions.members.first().id === client.user.id) {
+      port.write(message.content.slice(args[0].length + 1), (err) => {
+        if (err)
+          message.channel.send(err.message);
+      });
+    }
+  }
 
   // Ignores messages that don't start with the prefix
   if (message.content.startsWith(data.prefix)) {
