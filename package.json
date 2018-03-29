@@ -1,0 +1,16 @@
+{
+  "name": "deauther_bot",
+  "version": "1.0.0",
+  "description": "A discord bot for the ESP8266 deauther",
+  "main": "main.js\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Dsrc/\u001b[C\u001b[C\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001bmain.js",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "serialport": "^6.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "start"
+  },
+  "author": "John Wiggins",
+  "license": "ISC"
+}
